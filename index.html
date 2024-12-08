@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #706b6b;
+        }
+        #message {
+            
+            font-size: 4em; /* Taille de police très grande */
+            font-weight: bolder;
+            text-align: center;
+            position: relative; /* Nécessaire pour l'animation */
+             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: none; /* Commence caché */
+            
+            
+
+        }
+    </style>
+</head>
+<body class="body">
+
+    <div id="message">JOYEUX ANNIVERSAIRE OLI </div>
+
+    <script>
+        $(document).ready(function() {
+            const colors = ["red", "blue", "green", "aliceblue", "purple", "pink", "yellow"];
+            const col= [ "Brown", "Beige", "Coral", "Gold", "Indigo", "Ivory", "Lavender", "Violet", "Khaki", "Plum", "Salmon", "Tomato"];
+            let index = 0;
+            let rANDOMColor= Math.floor(Math.random()*7)
+
+                 
+
+            $("#message").fadeIn(6000); // Fait apparaître le texte avec un fondu sur 2 secondes 
+
+          
+
+            setInterval(function() {
+
+                  for (let index = 0; index < col.length; index++) {
+                    let rANDOMColor= Math.floor(Math.random()*7)
+                    $('.body').css('background-color', col[rANDOMColor])
+                    
+                  }
+                
+                $("#message").css("color", colors[index]);
+                index = (index + 1) % colors.length; // Change l'index pour la prochaine couleur
+            }, 1000); // Change de couleur toutes les secondes
+        });
+    </script>
+
+</body>
+</html>
